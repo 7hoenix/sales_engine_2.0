@@ -34,4 +34,20 @@ module SearchFunctions
   def find_all_by_updated_at(time)
     entries.select { |entry| entry.updated_at == time }
   end
+
+  def find_by_unit_price(price)
+    entries.detect { |entry| entry.unit_price == price }
+  end
+
+  def find_all_by_unit_price(price)
+    entries.select { |entry| entry.unit_price == price }
+  end
+
+  def find_by_merchant_id(id)
+    entries.detect { |entry| entry.merchant_id == id }
+  end
+
+  def find_all_by_merchant_id(id)
+    entries.select { |entry| entry.merchant_id == id }
+  end
 end
