@@ -20,7 +20,7 @@ class SalesEngine
 
   def startup
 
-    @merchant_repository = MerchantRepository.new(self, merchant_data)
+    @merchant_repository = MerchantRepository.new(merchant_data, self)
   end
 
 end

@@ -1,28 +1,15 @@
 class Merchant
-  attr_reader :name
+  attr_reader :name, :id, :created_at, :updated_at
 
   def initialize(merchant_info, merchant_repository)
+    @name = merchant_info[:name].to_s
+    @id = merchant_info[:id].to_i
+    @created_at = merchant_info[:created_at]
+    @updated_at = merchant_info[:updated_at]
     @merchant_repository = merchant_repository
-    @merchant_info = merchant_info
-  end
-
-  def id
-    merchant_info[0]
-  end
-
-  def name
-    merchant_info[1][:name]
-  end
-
-  def created_at
-    merchant_info[1][:created_at]
-  end
-
-  def updated_at
-    merchant_info[1][:updated_at]
   end
 
   protected
 
-  attr_reader :merchant_info, :merchant_repository
+  attr_reader :merchant_repository
 end

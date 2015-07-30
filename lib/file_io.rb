@@ -6,7 +6,7 @@ class FileIO
   end
 
   def read_file
-    CSV.read(input_file)
+    CSV.foreach(input_file, headers: true, header_converters: :symbol)
   end
 
   protected

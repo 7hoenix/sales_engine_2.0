@@ -6,6 +6,6 @@ class FileIOTest < Minitest::Test
     file_name = "test/fixtures/merchants.csv"
     inputer = FileIO.new(file_name)
     data = inputer.read_file
-    assert_equal "Schroeder-Jerde", data[1][1]
+    assert_equal "Schroeder-Jerde", data.first[:name]
   end
 end
